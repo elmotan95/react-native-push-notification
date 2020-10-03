@@ -22,7 +22,7 @@ class RNPushNotificationConfig {
             try {
                 ApplicationInfo applicationInfo = context.getPackageManager().getApplicationInfo(context.getPackageName(), PackageManager.GET_META_DATA);
                 metadata = applicationInfo.metaData;
-            } catch (PackageManager.NameNotFoundException e) {
+            } catch (Exception e) {
                 e.printStackTrace();
                 Log.e(RNPushNotification.LOG_TAG, "Error reading application meta, falling back to defaults");
                 metadata = new Bundle();
